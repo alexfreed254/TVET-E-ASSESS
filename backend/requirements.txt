@@ -51,7 +51,7 @@ flake8==7.0.0
 mypy==1.8.0
 
 # CORS & Middleware
-starlette==0.36.2
+# starlette==0.36.2  # Included with FastAPI, no need to specify separately
 
 # Utilities
 slugify==0.0.1
