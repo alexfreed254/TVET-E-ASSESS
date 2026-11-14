@@ -6,8 +6,8 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-dotenv==1.0.0
 
-# Database & ORM
-supabase==2.3.3
+# Database & Supabase (let supabase manage httpx and other dependencies)
+supabase==2.10.0
 psycopg2-binary==2.9.9
 sqlalchemy==2.0.25
 
@@ -27,14 +27,12 @@ xlsxwriter==3.1.9
 
 # File Handling & Storage
 pillow==10.4.0
-# python-magic==0.4.27  # Not needed for now, can be added later if required
 
 # Authentication & Security
 bcrypt==4.1.2
 pyjwt==2.8.0
 
-# HTTP & API
-httpx==0.25.2
+# HTTP & API (Let supabase manage httpx version)
 requests==2.31.0
 
 # Date & Time
@@ -50,9 +48,5 @@ black==24.1.1
 flake8==7.0.0
 mypy==1.8.0
 
-# CORS & Middleware
-# starlette==0.36.2  # Included with FastAPI, no need to specify separately
-
 # Utilities
-slugify==0.0.1
 python-slugify==8.0.2
