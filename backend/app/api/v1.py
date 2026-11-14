@@ -5,6 +5,7 @@ Combines all API endpoints
 from fastapi import APIRouter
 
 from app.api.endpoints import (
+    assessment_templates,
     auth,
     institutions,
     departments,
@@ -33,6 +34,7 @@ api_router.include_router(units.router, prefix="/units", tags=["Units"])
 api_router.include_router(trainees.router, prefix="/trainees", tags=["Trainees"])
 api_router.include_router(assessments.router, prefix="/assessments", tags=["Assessments"])
 api_router.include_router(assessment_sessions.router, prefix="/assessment-sessions", tags=["Assessment Sessions"])
+api_router.include_router(assessment_templates.router, prefix="/assessment-templates", tags=["Assessment Templates (TVET Format)"])
 api_router.include_router(marksheets.router, prefix="/marksheets", tags=["Marksheets"])
 api_router.include_router(evidence.router, prefix="/evidence", tags=["Evidence Management"])
 api_router.include_router(verification.router, prefix="/verification", tags=["Verification"])
