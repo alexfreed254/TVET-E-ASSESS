@@ -39,6 +39,26 @@ The conflict is caused by:
 
 ---
 
+## 🐛 **Issue #3: httpx Version Conflict with Supabase**
+
+**Error:**
+```
+ERROR: Cannot install -r requirements.txt (line 10) and httpx==0.26.0 
+because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested httpx==0.26.0
+    supabase 2.3.3 depends on httpx<0.26 and >=0.24
+```
+
+**Fix Applied:**
+- ✅ Downgraded `httpx` from `0.26.0` to `0.25.2`
+- ✅ httpx 0.25.2 is compatible with supabase 2.3.3 requirement (`httpx<0.26 and >=0.24`)
+
+**Status:** ✅ **FIXED**
+
+---
+
 ## 📦 **Current Requirements.txt Status**
 
 All dependencies are now compatible:
@@ -64,7 +84,7 @@ All dependencies are now compatible:
 ✅ pillow==10.4.0  ✓ (Updated)
 ✅ bcrypt==4.1.2
 ✅ pyjwt==2.8.0
-✅ httpx==0.26.0
+✅ httpx==0.25.2  ✓ (Updated for supabase compatibility)
 ✅ requests==2.31.0
 ✅ python-dateutil==2.8.2
 ✅ pytest==7.4.4
@@ -266,6 +286,7 @@ git push origin main
 | Python 3.14 incompatibility | ✅ Fixed | Added runtime.txt (3.11.7) |
 | Pillow build failure | ✅ Fixed | Updated to 10.4.0 |
 | Starlette conflict | ✅ Fixed | Removed (included in FastAPI) |
+| httpx version conflict | ✅ Fixed | Downgraded to 0.25.2 |
 | python-magic optional | ✅ Fixed | Commented out |
 
 **All issues resolved. Deployment should succeed.** 🚀
